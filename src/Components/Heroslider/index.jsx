@@ -179,12 +179,12 @@ export default function HeroSlider() {
                     className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
                   >
                     <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl flex items-center gap-2 sm:gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/25 text-base sm:text-lg w-full sm:w-auto justify-center">
-                      Get Started Free
+                      <a href="https://ideal-transact.vercel.app/contact">Get Started Free</a>
                       <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300 text-sm sm:text-base" />
                     </button>
                     <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold rounded-xl flex items-center gap-2 sm:gap-3 transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center">
                       <FaPlay className="text-xs sm:text-sm" />
-                      Watch Demo
+                      <a href="https://www.youtube.com/watch?v=SDbLsExYW4o&pp=ygULdGVjaCB2aWRlb3M%3D">Watch Demo</a>
                     </button>
                   </motion.div>
 
@@ -210,7 +210,7 @@ export default function HeroSlider() {
               </div>
 
               {/* Scroll Indicator - Centered */}
-              <motion.div
+              {/* <motion.div
                 className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -221,7 +221,7 @@ export default function HeroSlider() {
                     <div className="w-1 h-2 sm:h-3 bg-white/50 rounded-full mt-2"></div>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </SwiperSlide>
         ))}
