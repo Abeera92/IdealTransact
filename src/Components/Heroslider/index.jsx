@@ -256,7 +256,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Slide Progress Bar */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-white/10 z-20">
+      {/* <div className="absolute top-0 left-0 w-full h-1 bg-white/10 z-20">
         <motion.div
           className="h-full bg-gradient-to-r from-red-500 to-red-600"
           key={activeIndex}
@@ -264,7 +264,7 @@ export default function HeroSlider() {
           animate={{ width: "100%" }}
           transition={{ duration: 5, ease: "linear" }}
         />
-      </div>
+      </div> */}
 
       {/* Gradient Overlays */}
       <div className="absolute inset-0 pointer-events-none">
