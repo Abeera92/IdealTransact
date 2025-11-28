@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { FaPlay, FaArrowRight, FaArrowLeft, FaRocket, FaChartLine, FaShieldAlt } from "react-icons/fa";
 
 import "swiper/css";
@@ -178,7 +179,7 @@ export default function HeroSlider() {
                     variants={itemVariants}
                     className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
                   >
-                  <Link
+                    <Link
   to="/contact"
   className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-500 to-red-600 
              hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl 
