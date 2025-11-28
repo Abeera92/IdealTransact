@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPlay, FaArrowDown, FaShieldAlt, FaRocket, FaUsers } from "react-icons/fa";
-
+import { FaPlay, FaArrowDown, FaShieldAlt, FaArrowRight, FaRocket, FaUsers } from "react-icons/fa"; 
+import { Link } from "react-router-dom";
 export default function AboutHero() {
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -122,28 +122,34 @@ export default function CtaSection() {
               </motion.div>
 
               {/* CTA Buttons */}
-              <motion.div
-                variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group px-8 py-4 bg-[#FF5252] text-white font-semibold rounded-xl hover:bg-[#FF5252]/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FF5252]/25 flex items-center gap-3"
-                >
-                  Start Free Trial
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                </motion.button>
+             <motion.div
+      variants={itemVariants}
+      className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
+    >
+      {/* Start Free Trial Button */}
+      <motion.a
+        href="/contact"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="group px-8 py-4 bg-[#FF5252] text-white font-semibold rounded-xl hover:bg-[#FF5252]/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FF5252]/25 flex items-center gap-3"
+      >
+        Start Free Trial
+        <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+      </motion.a>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 flex items-center gap-3"
-                >
-                  <FaPlay className="text-sm" />
-                  Watch Demo
-                </motion.button>
-              </motion.div>
+      {/* Watch Demo Button */}
+      <motion.a
+        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 flex items-center gap-3"
+      >
+        <FaPlay className="text-sm" />
+        Watch Demo
+      </motion.a>
+    </motion.div>
 
               {/* Trust Badge */}
               <motion.div

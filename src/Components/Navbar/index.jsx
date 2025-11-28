@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("Home");
+  const location = useLocation(); // Get current route
 
   const menuItems = [
     { name: "Home", link: "/" },
@@ -14,6 +15,14 @@ export default function Navbar() {
     { name: "Services", link: "/services" },
     { name: "Contact", link: "/contact" }
   ];
+
+  // Check if a menu item is active based on current route
+  const isActive = (link) => {
+    if (link === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname === link;
+  };
 
   return (
     <nav className="w-full bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
@@ -32,12 +41,11 @@ export default function Navbar() {
             <li
               key={index}
               className="relative group"
-              onClick={() => setActive(item.name)}
             >
               <Link 
                 to={item.link}
                 className={`font-semibold transition-all duration-300 ${
-                  active === item.name 
+                  isActive(item.link) 
                     ? 'text-[#FF5252]' 
                     : 'text-gray-700 hover:text-[#FF5252]'
                 }`}
@@ -47,7 +55,7 @@ export default function Navbar() {
 
               {/* Animated underline */}
               <div className={`absolute left-0 -bottom-1 h-0.5 bg-[#FF5252] transition-all duration-300 ${
-                active === item.name ? 'w-full' : 'w-0 group-hover:w-full'
+                isActive(item.link) ? 'w-full' : 'w-0 group-hover:w-full'
               }`} />
             </li>
           ))}
@@ -92,12 +100,9 @@ export default function Navbar() {
             <Link
               key={index}
               to={item.link}
-              onClick={() => {
-                setActive(item.name);
-                setOpen(false);
-              }}
+              onClick={() => setOpen(false)}
               className={`block py-3 px-4 rounded-xl transition-all duration-300 font-semibold ${
-                active === item.name
+                isActive(item.link)
                   ? 'bg-[#FF5252]/10 text-[#FF5252] border-l-4 border-[#FF5252]'
                   : 'text-gray-700 hover:bg-gray-50 hover:text-[#FF5252]'
               }`}

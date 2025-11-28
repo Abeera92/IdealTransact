@@ -70,7 +70,7 @@ export default function OurStory() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-br  from-[#ff6666a4]/20 to-[#FBFCFD] py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-br  from-[#ff6666a4]/20 to-[#FCF9FA] py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-72 h-72 bg-[#FF5252]/5 rounded-full blur-3xl"></div>
