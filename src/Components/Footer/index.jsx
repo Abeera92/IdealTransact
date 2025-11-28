@@ -95,7 +95,7 @@ export default function Footer() {
     { 
       icon: Facebook, 
       label: "Facebook",
-      url: "https://facebook.com/yourcompany" 
+      url: "https://www.facebook.com/Thesublimetech" 
     },
     { 
       icon: Twitter, 
@@ -105,12 +105,12 @@ export default function Footer() {
     { 
       icon: Linkedin, 
       label: "LinkedIn",
-      url: "https://linkedin.com/company/yourcompany" 
+      url: "https://www.linkedin.com/company/sublime-tech-solutions/" 
     },
     { 
       icon: Instagram, 
       label: "Instagram",
-      url: "https://instagram.com/yourcompany" 
+      url: "https://www.instagram.com/sublimetech99/" 
     }
   ].map((social, index) => (
     <motion.a
