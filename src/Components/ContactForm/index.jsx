@@ -11,13 +11,12 @@ import {
   FaBuilding, 
   FaIndustry,
   FaFileAlt,
-  FaShieldAlt,
   FaRocket,
   FaArrowRight,
-  FaCreditCard,
-  FaCalendarAlt,
-  FaEye,
-  FaGem
+  FaShieldAlt,
+  FaGlobe,
+  FaHeadset,
+  FaCogs
 } from "react-icons/fa";
 
 const ContactForm = () => {
@@ -130,7 +129,7 @@ const ContactForm = () => {
 
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
         
-        {/* LEFT FORM CARD */}
+        {/* LEFT FORM CARD - UNCHANGED */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -379,7 +378,7 @@ const ContactForm = () => {
           )}
         </motion.div>
 
-        {/* RIGHT SIDE HERO */}
+        {/* UPDATED RIGHT SECTION */}
         <motion.div
           variants={cardVariants}
           initial="hidden"
@@ -400,11 +399,10 @@ const ContactForm = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-lg"
             >
-              Enter the Future of{" "}
+              Why Choose{" "}
               <span className="text-[#FF5252]">
-                Payments
+                Finera
               </span>
-              , Today
             </motion.h2>
 
             <motion.p
@@ -413,78 +411,78 @@ const ContactForm = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-6 text-gray-300 text-lg max-w-md leading-relaxed"
             >
-              Modern, smart & reliable payment solutions crafted to accelerate your business growth and revenue.
+              Experience the next generation of payment solutions with cutting-edge technology and unparalleled security.
             </motion.p>
 
-            {/* Features List */}
+            {/* Benefits Grid */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-8 space-y-4"
+              className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6"
             >
-              {[
-                "Real-time payment processing",
-                "Advanced fraud protection",
-                "Multi-currency support",
-                "24/7 premium support",
-                "Seamless API integration"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <FaCheckCircle className="text-[#FF5252] text-sm flex-shrink-0" />
-                  <span className="text-gray-300">{feature}</span>
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <div className="w-12 h-12 bg-[#FF5252]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaShieldAlt className="text-[#FF5252] text-xl" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="font-semibold text-white mb-2">Bank-Level Security</h3>
+                  <p className="text-gray-300 text-sm">Enterprise-grade encryption and fraud protection</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <div className="w-12 h-12 bg-[#FF5252]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaGlobe className="text-[#FF5252] text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-2">Global Reach</h3>
+                  <p className="text-gray-300 text-sm">Accept payments from 190+ countries worldwide</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <div className="w-12 h-12 bg-[#FF5252]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaCogs className="text-[#FF5252] text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-2">Easy Integration</h3>
+                  <p className="text-gray-300 text-sm">Simple APIs and comprehensive documentation</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm">
+                <div className="w-12 h-12 bg-[#FF5252]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaHeadset className="text-[#FF5252] text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-2">24/7 Support</h3>
+                  <p className="text-gray-300 text-sm">Dedicated customer success team always available</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-8 grid grid-cols-3 gap-6 pt-6 border-t border-white/10"
+            >
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#FF5252]">99.9%</div>
+                <div className="text-gray-300 text-sm mt-1">Uptime</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#FF5252]">2M+</div>
+                <div className="text-gray-300 text-sm mt-1">Transactions</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#FF5252]">50+</div>
+                <div className="text-gray-300 text-sm mt-1">Countries</div>
+              </div>
             </motion.div>
           </div>
-
-          {/* Enhanced Card Mockup */}
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="absolute right-6 bottom-6 bg-white text-gray-900 rounded-2xl p-6 w-80 shadow-2xl border border-gray-200"
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="font-bold text-lg text-gray-900">Finera</h3>
-              <div className="w-8 h-8 bg-[#FF5252] rounded-lg flex items-center justify-center">
-                <FaGem className="text-white text-sm" />
-              </div>
-            </div>
-            
-            <div className="mb-6">
-              <p className="text-3xl font-bold text-gray-900">$265,320.81</p>
-              <p className="text-gray-500 text-sm">Total Balance (USD)</p>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Primary Card</span>
-                  <FaCreditCard className="text-[#FF5252] text-xs" />
-                </div>
-                <p className="font-semibold text-lg mt-1">$65,320.81</p>
-                <p className="text-gray-500 text-sm">•••• 6917</p>
-              </div>
-
-              <div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Next Payout</span>
-                  <FaCalendarAlt className="text-[#FF5252] text-xs" />
-                </div>
-                <p className="font-semibold mt-1">May 12, 2025</p>
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full mt-4 py-3 bg-[#FF5252] text-white font-semibold rounded-xl hover:bg-[#FF5252]/90 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <FaEye className="text-sm" />
-                View Dashboard
-              </motion.button>
-            </div>
-          </motion.div> */}
         </motion.div>
       </div>
     </section>
