@@ -255,11 +255,11 @@ export default function TestimonialsCarousel() {
         </div>
 
         {/* Progress Bar */}
-        <div className="mt-8 px-4">
-          <div className="w-full bg-gray-200 rounded-full h-2">
+        <div className="">
+          <div className="w-full bg-gray-200 rounded-full">
             <motion.div
               key={currentSlide}
-              className="h-2 bg-gradient-to-r from-red-500 to-red-600 rounded-full"
+              className=" bg-gradient-to-r from-red-500 to-red-600 rounded-full"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 4, ease: "linear" }}
