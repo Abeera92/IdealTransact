@@ -90,24 +90,42 @@ export default function Footer() {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-4 pt-4">
-                {[
-                  { icon: Facebook, label: "Facebook" },
-                  { icon: Twitter, label: "Twitter" },
-                  { icon: Linkedin, label: "LinkedIn" },
-                  { icon: Instagram, label: "Instagram" }
-                ].map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#FF5252] hover:text-white transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
+            <div className="flex gap-4 pt-4">
+  {[
+    { 
+      icon: Facebook, 
+      label: "Facebook",
+      url: "https://facebook.com/yourcompany" 
+    },
+    { 
+      icon: Twitter, 
+      label: "Twitter",
+      url: "https://twitter.com/yourcompany" 
+    },
+    { 
+      icon: Linkedin, 
+      label: "LinkedIn",
+      url: "https://linkedin.com/company/yourcompany" 
+    },
+    { 
+      icon: Instagram, 
+      label: "Instagram",
+      url: "https://instagram.com/yourcompany" 
+    }
+  ].map((social, index) => (
+    <motion.a
+      key={index}
+      href={social.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.1, y: -2 }}
+      className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#FF5252] hover:text-white transition-all duration-300"
+      aria-label={social.label}
+    >
+      <social.icon className="w-5 h-5" />
+    </motion.a>
+  ))}
+</div>
             </motion.div>
 
             {/* Quick Links */}

@@ -18,6 +18,10 @@ import {
   FaHeadset,
   FaCogs
 } from "react-icons/fa";
+const DummyEmailButton = ({ isSubmitting }) => {
+  const handleClick = () => {
+    window.location.href = "mailto:dummy@example.com?subject=Contact&body=Hello";
+  };
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -353,32 +357,32 @@ const ContactForm = () => {
                   </motion.div>
 
                   {/* Submit Button */}
-                  <motion.button
-                    variants={itemVariants}
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 px-6 bg-[#FF5252] text-white font-semibold rounded-xl hover:bg-[#FF5252]/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FF5252]/25 disabled:opacity-50 disabled:transform-none disabled:hover:shadow-none flex items-center justify-center gap-3"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        <FaPaperPlane className="text-sm" />
-                        Get Started Now
-                        <FaArrowRight className="text-sm" />
-                      </>
-                    )}
-                  </motion.button>
+                   <motion.button
+      onClick={handleClick}
+      type="button"
+      disabled={isSubmitting}
+      className="w-full py-4 px-6 bg-[#FF5252] text-white font-semibold rounded-xl hover:bg-[#FF5252]/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FF5252]/25 disabled:opacity-50 disabled:transform-none disabled:hover:shadow-none flex items-center justify-center gap-3"
+    >
+      {isSubmitting ? (
+        <>
+          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          Processing...
+        </>
+      ) : (
+        <>
+          <FaPaperPlane className="text-sm" />
+          Get Started Now
+          <FaArrowRight className="text-sm" />
+        </>
+      )}
+    </motion.button>
                 </motion.div>
               </form>
             </>
           )}
         </motion.div>
 
-        {/* UPDATED RIGHT SECTION */}
+        {/* RIGHT SECTION */}
         <motion.div
           variants={cardVariants}
           initial="hidden"
@@ -401,7 +405,7 @@ const ContactForm = () => {
             >
               Why Choose{" "}
               <span className="text-[#FF5252]">
-                Finera
+                Ideal Transact
               </span>
             </motion.h2>
 
