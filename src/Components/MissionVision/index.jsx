@@ -52,7 +52,7 @@ export default function MissionVision() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-br from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-br  from-[#FBFCFD]/20 to-[#ff6666a4] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 left-10 w-72 h-72 bg-[#FF5252]/5 rounded-full blur-3xl"></div>

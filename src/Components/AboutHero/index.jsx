@@ -124,20 +124,26 @@ export default function AboutHero() {
             payment processing solutions that drive growth and customer satisfaction.
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <button className="group px-8 py-4 bg-[#FF5252] text-white font-semibold rounded-xl hover:bg-[#FF5252]/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FF5252]/25 flex items-center gap-3">
-              Get Started Free
-              <FaArrowDown className="group-hover:translate-y-1 transition-transform duration-300" />
-            </button>
-            <button className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 flex items-center gap-3">
-              <FaPlay className="text-sm" />
-              Watch Our Story
-            </button>
-          </motion.div>
+           <motion.div
+                    variants={itemVariants}
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
+                  >
+                    <Link
+  to="/contact"
+  className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-500 to-red-600 
+             hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl 
+             flex items-center gap-2 sm:gap-3 transition-all duration-300 transform 
+             hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/25 
+             text-base sm:text-lg w-full sm:w-auto justify-center"
+>
+  Get Started Free
+  <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300 text-sm sm:text-base" />
+</Link>
+                    <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold rounded-xl flex items-center gap-2 sm:gap-3 transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center">
+                      <FaPlay className="text-xs sm:text-sm" />
+                      <a href="https://www.youtube.com/watch?v=SDbLsExYW4o&pp=ygULdGVjaCB2aWRlb3M%3D">Watch Demo</a>
+                    </button>
+                  </motion.div>
 
           {/* Stats Section - Moved up with more spacing */}
           <motion.div
