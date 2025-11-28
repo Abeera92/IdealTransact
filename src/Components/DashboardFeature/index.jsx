@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaCheckCircle, FaChartLine, FaBell, FaCoins, FaRocket } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaChartLine,
+  FaBell,
+  FaCoins,
+  FaRocket,
+} from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import dashboardImage from "../../assets/images/Dashboard.jpg";
+import { Link } from "react-router-dom";
 
 const DashboardFeature = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,23 +25,23 @@ const DashboardFeature = () => {
     {
       icon: FaChartLine,
       text: "Real-time transaction monitoring and notifications",
-      delay: 0.1
+      delay: 0.1,
     },
     {
       icon: FaBell,
       text: "Advanced analytics and spending insights",
-      delay: 0.2
+      delay: 0.2,
     },
     {
       icon: FaCoins,
       text: "Multi-currency account management",
-      delay: 0.3
+      delay: 0.3,
     },
     {
       icon: FaRocket,
       text: "AI-powered financial recommendations",
-      delay: 0.4
-    }
+      delay: 0.4,
+    },
   ];
 
   const containerVariants = {
@@ -42,9 +49,9 @@ const DashboardFeature = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -54,9 +61,9 @@ const DashboardFeature = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const imageVariants = {
@@ -67,13 +74,16 @@ const DashboardFeature = () => {
       rotateY: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <section ref={ref} className="w-full py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50/30 relative overflow-hidden">
+    <section
+      ref={ref}
+      className="w-full py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50/30 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
@@ -84,13 +94,16 @@ const DashboardFeature = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* LEFT SIDE CONTENT */}
-          <motion.div 
+          <motion.div
             className="flex-1"
             variants={containerVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
           >
-            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-4">
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center gap-3 mb-4"
+            >
               <div className="p-2 bg-gradient-to-r from-red-500/20 to-red-600/10 rounded-lg border border-red-500/20">
                 <FaRocket className="text-red-500 text-xl" />
               </div>
@@ -99,7 +112,7 @@ const DashboardFeature = () => {
               </span>
             </motion.div>
 
-            <motion.h2 
+            <motion.h2
               variants={itemVariants}
               className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
             >
@@ -110,19 +123,17 @@ const DashboardFeature = () => {
               </span>
             </motion.h2>
 
-            <motion.p 
+            <motion.p
               variants={itemVariants}
               className="mt-6 text-gray-600 text-xl font-medium max-w-lg leading-relaxed"
             >
-              Manage all your transactions, view analytics, and control your finances from
-              one beautiful dashboard designed for simplicity and power.
+              Manage all your transactions, view analytics, and control your
+              finances from one beautiful dashboard designed for simplicity and
+              power.
             </motion.p>
 
             {/* Enhanced Checklist */}
-            <motion.div 
-              variants={containerVariants}
-              className="mt-8 space-y-4"
-            >
+            <motion.div variants={containerVariants} className="mt-8 space-y-4">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -141,21 +152,41 @@ const DashboardFeature = () => {
             </motion.div>
 
             {/* Enhanced Button */}
-            <motion.div variants={itemVariants} className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl flex items-center gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/25">
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 flex flex-wrap gap-4"
+            >
+              <button
+                onClick={() => {
+                  document.getElementById("contact-form").scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl flex items-center gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/25"
+              >
                 Try Dashboard Free
                 <FaRocket className="text-lg" />
               </button>
               <button className="px-8 py-4 border-2 border-gray-300 hover:border-red-500 text-gray-700 hover:text-red-600 font-semibold rounded-xl flex items-center gap-3 transition-all duration-300">
-                Watch Demo
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                <a href="https://www.youtube.com/watch?v=SDbLsExYW4o&pp=ygULdGVjaCB2aWRlb3M%3D">
+                  Watch Demo
+                </a>
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </button>
             </motion.div>
 
             {/* Stats */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="mt-12 flex flex-wrap gap-8"
             >
@@ -175,7 +206,7 @@ const DashboardFeature = () => {
           </motion.div>
 
           {/* RIGHT SIDE IMAGE */}
-          <motion.div 
+          <motion.div
             className="flex-1 flex justify-center"
             variants={imageVariants}
             initial="hidden"
@@ -184,8 +215,11 @@ const DashboardFeature = () => {
             <div className="relative">
               {/* Floating Elements */}
               <div className="absolute -top-6 -left-6 w-12 h-12 bg-red-500 rounded-2xl rotate-12 opacity-20 animate-float"></div>
-              <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-blue-500 rounded-xl -rotate-12 opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-              
+              <div
+                className="absolute -bottom-4 -right-4 w-8 h-8 bg-blue-500 rounded-xl -rotate-12 opacity-20 animate-float"
+                style={{ animationDelay: "2s" }}
+              ></div>
+
               {/* Main Image Container */}
               <div className="relative rounded-3xl p-6 bg-gradient-to-br from-red-500/10 via-purple-500/10 to-blue-500/10 border border-white/20 backdrop-blur-sm shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-blue-500/5 rounded-3xl"></div>
@@ -194,12 +228,14 @@ const DashboardFeature = () => {
                   alt="Dashboard"
                   className="relative z-10 w-full max-w-xl rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                 />
-                
+
                 {/* Floating Notification */}
                 <div className="absolute top-4 right-4 z-20 bg-white rounded-xl p-3 shadow-2xl animate-bounce">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-semibold text-gray-700">New Alert</span>
+                    <span className="text-sm font-semibold text-gray-700">
+                      New Alert
+                    </span>
                   </div>
                 </div>
               </div>
@@ -210,8 +246,13 @@ const DashboardFeature = () => {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(12deg); }
-          50% { transform: translateY(-20px) rotate(12deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotate(12deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(12deg);
+          }
         }
         .animate-float {
           animation: float 3s ease-in-out infinite;

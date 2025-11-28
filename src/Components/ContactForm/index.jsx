@@ -120,7 +120,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <section id="contactForm" className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
       {/* Background Elements with #FF5252 */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 left-10 w-72 h-72 bg-[#FF5252]/10 rounded-full blur-3xl"></div>

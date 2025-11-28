@@ -246,12 +246,12 @@ export default function TestimonialsCarousel() {
           </button>
 
           {/* Autoplay Control */}
-          <button
+          {/* <button
             onClick={toggleAutoplay}
             className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:text-red-600 transition-all duration-300 shadow-lg z-20"
           >
             {isPlaying ? <FaPause className="text-sm" /> : <FaPlay className="text-sm" />}
-          </button>
+          </button> */}
         </div>
 
         {/* Progress Bar */}

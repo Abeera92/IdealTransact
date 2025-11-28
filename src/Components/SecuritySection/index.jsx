@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Shield, Lock, CheckCircle, Award, Eye, Cpu, Users, Server } from "lucide-react";
-
+import { Link } from "react-router-dom";
 export default function SecuritySection() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -176,12 +176,15 @@ export default function SecuritySection() {
             Ready to experience enterprise-grade security?
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-red-500/25">
+            {/* <button className="px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-red-500/25">
               Start Secured Trial
-            </button>
-            <button className="px-8 py-3 border border-white/20 rounded-lg font-semibold hover:bg-white/5 transition-all duration-300">
-              Schedule Demo
-            </button>
+            </button> */}
+            <Link
+  to="/contact"
+  className="px-8 py-3 border border-white/20 rounded-lg font-semibold hover:bg-white/5 transition-all duration-300"
+>
+  Schedule Demo
+</Link>
           </div>
         </div>
       </div>
