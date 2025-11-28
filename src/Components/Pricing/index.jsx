@@ -157,10 +157,10 @@ export default function Pricing() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex items-center justify-center gap-4 mb-12"
           >
-            <span className={`text-lg font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
+            {/* <span className={`text-lg font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
               Monthly
-            </span>
-            <button
+            </span> */}
+            {/* <button
               onClick={() => setIsAnnual(!isAnnual)}
               className="relative w-14 h-7 bg-gray-300 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
@@ -174,7 +174,7 @@ export default function Pricing() {
                   isAnnual ? 'bg-red-500' : 'bg-gray-400'
                 }`}
               />
-            </button>
+            </button> */}
             <span className={`text-lg font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
               Annual
               <span className="ml-2 px-2 py-1 bg-green-500/20 text-green-600 text-xs font-semibold rounded-full">
