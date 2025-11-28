@@ -15,12 +15,19 @@ import {
   Users,
   Globe
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
+const navLinks = [
+  { name: "Home", url: "/" },
+  { name: "About Us", url: "/about" },
+  { name: "Services", url: "/services" },
+  { name: "Contact", url: "/contact" },
+  { name: "Features", url: "/features" }
+];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -41,7 +48,9 @@ export default function Footer() {
         ease: "easeOut"
       }
     }
+    
   };
+
 
   return (
     <footer className="w-full bg-gradient-to-br from-gray-900 to-black text-gray-300 relative overflow-hidden">
@@ -134,26 +143,21 @@ export default function Footer() {
                 <Users className="w-5 h-5 text-[#FF5252]" />
                 Quick Links
               </h3>
-              <ul className="space-y-3">
-                {[
-                  { name: "Home", url: "/" },
-                  { name: "About Us", url: "/about" },
-                  { name: "Services", url: "/services" },
-                  { name: "Contact", url: "/contact" },
-                  { name: "Features", url: "/features" }
-                ].map((link, index) => (
-                  <li key={index}>
-                    <motion.a
-                      href={link.url}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 group"
-                    >
-                      <div className="w-1.5 h-1.5 bg-[#FF5252] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {link.name}
-                    </motion.a>
-                  </li>
-                ))}
-              </ul>
+                 <ul className="space-y-3">
+      {navLinks.map((link, index) => (
+        <li key={index}>
+          <motion.div whileHover={{ x: 5 }}>
+            <Link
+              to={link.url}
+              className="text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 group"
+            >
+              <div className="w-1.5 h-1.5 bg-[#FF5252] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {link.name}
+            </Link>
+          </motion.div>
+        </li>
+      ))}
+    </ul>
             </motion.div>
 
             {/* Services */}
