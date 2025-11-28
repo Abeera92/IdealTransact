@@ -90,42 +90,42 @@ export default function Footer() {
               </div>
 
               {/* Social Links */}
-            <div className="flex gap-4 pt-4">
-  {[
-    { 
-      icon: Facebook, 
-      label: "Facebook",
-      url: "https://www.facebook.com/Thesublimetech" 
-    },
-    { 
-      icon: Twitter, 
-      label: "Twitter",
-      url: "https://twitter.com/yourcompany" 
-    },
-    { 
-      icon: Linkedin, 
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/company/sublime-tech-solutions/" 
-    },
-    { 
-      icon: Instagram, 
-      label: "Instagram",
-      url: "https://www.instagram.com/sublimetech99/" 
-    }
-  ].map((social, index) => (
-    <motion.a
-      key={index}
-      href={social.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.1, y: -2 }}
-      className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#FF5252] hover:text-white transition-all duration-300"
-      aria-label={social.label}
-    >
-      <social.icon className="w-5 h-5" />
-    </motion.a>
-  ))}
-</div>
+              <div className="flex gap-4 pt-4">
+                {[
+                  { 
+                    icon: Facebook, 
+                    label: "Facebook",
+                    url: "https://www.facebook.com/Thesublimetech" 
+                  },
+                  { 
+                    icon: Twitter, 
+                    label: "Twitter",
+                    url: "https://twitter.com/idealtransact" 
+                  },
+                  { 
+                    icon: Linkedin, 
+                    label: "LinkedIn",
+                    url: "https://www.linkedin.com/company/sublime-tech-solutions/" 
+                  },
+                  { 
+                    icon: Instagram, 
+                    label: "Instagram",
+                    url: "https://www.instagram.com/sublimetech99/" 
+                  }
+                ].map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#FF5252] hover:text-white transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
             </motion.div>
 
             {/* Quick Links */}
@@ -135,15 +135,21 @@ export default function Footer() {
                 Quick Links
               </h3>
               <ul className="space-y-3">
-                {["Home", "About Us", "Services", "Contact", "Features"].map((link, index) => (
+                {[
+                  { name: "Home", url: "/" },
+                  { name: "About Us", url: "/about" },
+                  { name: "Services", url: "/services" },
+                  { name: "Contact", url: "/contact" },
+                  { name: "Features", url: "/features" }
+                ].map((link, index) => (
                   <li key={index}>
                     <motion.a
-                      href="#"
+                      href={link.url}
                       whileHover={{ x: 5 }}
                       className="text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 group"
                     >
                       <div className="w-1.5 h-1.5 bg-[#FF5252] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {link}
+                      {link.name}
                     </motion.a>
                   </li>
                 ))}
@@ -158,21 +164,21 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Payment Gateway",
-                  "POS Solutions", 
-                  "E-commerce Payments",
-                  "Merchant Accounts",
-                  "Fraud Prevention",
-                  "24/7 Support"
+                  { name: "Payment Gateway", url: "/services/payment-gateway" },
+                  { name: "POS Solutions", url: "/services/pos-solutions" },
+                  { name: "E-commerce Payments", url: "/services/ecommerce-payments" },
+                  { name: "Merchant Accounts", url: "/services/merchant-accounts" },
+                  { name: "Fraud Prevention", url: "/services/fraud-prevention" },
+                  { name: "24/7 Support", url: "/support" }
                 ].map((service, index) => (
                   <li key={index}>
                     <motion.a
-                      href="#"
+                      href={service.url}
                       whileHover={{ x: 5 }}
                       className="text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 group"
                     >
                       <div className="w-1.5 h-1.5 bg-[#FF5252] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {service}
+                      {service.name}
                     </motion.a>
                   </li>
                 ))}
@@ -219,9 +225,12 @@ export default function Footer() {
                 </li>
                 
                 <li>
-                  <motion.div
+                  <motion.a
+                    href="https://maps.google.com/?q=123+Financial+District+NY+10004"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-gray-400 group"
+                    className="flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-300 group"
                   >
                     <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-[#FF5252] transition-colors duration-300">
                       <MapPin className="w-4 h-4" />
@@ -230,7 +239,7 @@ export default function Footer() {
                       <div className="text-sm">Visit Us</div>
                       <div className="text-white text-sm">123 Financial District, NY 10004</div>
                     </div>
-                  </motion.div>
+                  </motion.a>
                 </li>
               </ul>
             </motion.div>
@@ -253,14 +262,19 @@ export default function Footer() {
 
               {/* Legal Links */}
               <div className="flex flex-wrap gap-6 text-sm text-gray-400 justify-center">
-                {["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"].map((link, index) => (
+                {[
+                  { name: "Privacy Policy", url: "/privacy-policy" },
+                  { name: "Terms of Service", url: "/terms-of-service" },
+                  { name: "Cookie Policy", url: "/cookie-policy" },
+                  { name: "Security", url: "/security" }
+                ].map((link, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={link.url}
                     whileHover={{ color: "#FFFFFF" }}
                     className="hover:text-white transition-colors duration-300"
                   >
-                    {link}
+                    {link.name}
                   </motion.a>
                 ))}
               </div>
