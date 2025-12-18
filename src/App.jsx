@@ -11,7 +11,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import PaymentGateway from "./pages/Services/paymentGateway";
+import PaymentGateway from "./pages/Services/PaymentGateway";
 import POSAndTerminal from "./pages/Services/PosAndTerminal";
 import EcommercePayments from "./pages/Services/EcomPayment";
 import MerchantAccountSetup from "./pages/Services/MerchentAcc";
