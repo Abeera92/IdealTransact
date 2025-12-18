@@ -16,6 +16,7 @@ import {
   Globe
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import footerlogo from '../../assets/images/footerlogo.png'
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -72,14 +73,7 @@ const navLinks = [
           >
             {/* Brand & Description */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#FF5252] to-[#FF5252]/80 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">IT</span>
-                </div>
-                <h1 className="text-2xl font-bold text-white bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  IDEAL TRANSACT
-                </h1>
-              </div>
+             <img src={footerlogo} alt="" className="h-20 w-auto"/>
               
               <p className="text-gray-400 leading-relaxed">
                 Revolutionizing financial transactions with secure, fast, and reliable 
