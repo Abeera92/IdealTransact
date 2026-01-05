@@ -17,6 +17,7 @@ import EcommercePayments from "./pages/Services/EcomPayment";
 import MerchantAccountSetup from "./pages/Services/MerchentAcc";
 import FraudPrevention from "./pages/Services/FraudPrevention";
 import MerchantSupport from "./pages/Services/Support";
+import FeaturedProjects from "./Components/FeaturedProjects";
 
 function App() {
   return (
@@ -63,6 +64,8 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+
+          <FeaturedProjects/>
         </main>
 
         <Footer />

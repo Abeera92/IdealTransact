@@ -147,7 +147,7 @@ export default function PricingCards({ billingCycle }) {
               <div className="mb-6">
                 <div className="flex items-baseline">
                   <span className="text-4xl font-bold text-gray-900">
-                    ${billingCycle === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
+                    £{billingCycle === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
                   </span>
                   <span className="text-gray-600 ml-2">
                     /{billingCycle === "monthly" ? 'month' : 'year'}

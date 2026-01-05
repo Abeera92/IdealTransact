@@ -173,13 +173,13 @@ export default function Pricing() {
                 <div className="text-center mb-6">
                   <div className="flex items-baseline justify-center gap-1 mb-2">
                     <span className="text-3xl font-bold text-gray-900">
-                      ${price}
+                      £{price}
                     </span>
                     <span className="text-gray-600">/month</span>
                   </div>
                   {isAnnual && (
                     <p className="text-sm text-gray-500">
-                      ${plan.annualPrice * 12} billed yearly
+                      £{plan.annualPrice * 12} billed yearly
                     </p>
                   )}
                 </div>
